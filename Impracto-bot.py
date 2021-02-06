@@ -7,6 +7,8 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print("Score!!")
 
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for i!help"))
+
     async def on_message(self, message):
 
         global msgNo
@@ -14,18 +16,20 @@ class MyClient(discord.Client):
         mcu = message.content.upper()
         mc = message.content
 
-        msgNo = msgNo + 1
-        if msgNo == 10:
-            await message.channel.send("A" + "\n" * 1998 + "B")
-            msgNo == 0
-
-        if message.author.id != 743009565242556526:
-            await message.author.send(mc)
-
-        thonk = client.get_emoji(807467352475697184)
-        await message.add_reaction(thonk)
-
         if message.author != client.user:
+
+            #IMPRACTICAL STUFF#
+
+            thonk = client.get_emoji(807467352475697184)
+            await message.add_reaction(thonk)
+
+            msgNo = msgNo + 1
+            if msgNo == 10:
+                await message.channel.send("A" + "\n" * 1998 + "B")
+                msgNo == 0
+
+            if message.author.id != 743009565242556526:
+                await message.author.send(mc)
 
             if mcu == "I!HELP":
                 print("Math!!")
@@ -39,6 +43,104 @@ class MyClient(discord.Client):
                 await message.channel.send(embed = embed)
                 embed = discord.Embed(title = "__Support Server__", description = "Our support server if you need help, or have suggestions!", url = "https://www.youtube.com/watch?v=DLzxrzFCyOs", color = 0x0037ff)
                 await message.channel.send(embed = embed)
+
+                time.sleep(20)
+
+                embed = discord.Embed(title = "__Help menu__", description = "This actually *is* the real help menu XD", color = 0xff0000)
+                await message.author.send(embed = embed)
+                embed = discord.Embed(title = "__Commands__", description = "And yes, these *are* the real commands in a document", url = "https://docs.google.com/document/d/1DlGVVHw22HsB539Swe0muuW1-HK7eroEUemncS0cNRI/edit?usp=sharing", color = 0xff0000)
+                await message.author.send(embed = embed)
+                embed = discord.Embed(title = "__Support Server__", description = "Yep, you guessed it right! This *is* our support server!", url = "https://discord.gg/kbS5wa8D7M", color = 0xff0000)
+                await message.author.send(embed = embed)
+
+            #ACTUAL PRACTICAL STUFF#
+
+            if mcu.startswith("I!PURGE"):
+                purge = mcu.split(" ")[-1]
+                print("Purged " + purge + " messages")
+                await message.channel.purge(limit = int((purge)) + 1)
+
+            if mcu == "I!PING":
+                print("I!ping") 
+                await message.channel.send(f":ping_pong: Pong! | Message took ***{round(client.latency * 1000)}ms*** to respond")
+
+            if mcu.startswith("I!HBD"):
+                bday = mcu.split(" ")[-1]
+                print("Happy Birthday " + bday + " !!!")
+                await message.channel.send(":tada: :tada: Happy birthday" + bday + "!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
+
+            if mcu == "I!MUSIC":
+                print("Music")
+                embed=discord.Embed(title="Music", url="https://open.spotify.com/collection/tracks")
+                await message.channel.send(embed = embed)
+
+            if mcu == "I!STATUS":
+                print("status report")
+                await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
+
+                time.sleep(2)
+
+                await message.channel.purge(limit = 1)
+                await message.channel.send("Yeah, jk")
+                await message.channel.send("Status:" + "\n" + "Seems to be working..." + "\n" + f"The bot's ping is ***{round(client.latency * 1000)}ms*** though.")
+
+            if mcu.startswith("I!ADD") or mcu.startswith("I!SUM"):
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                print("Sum") 
+                sum1 = mcu.split(" ")[1]
+                sum2 = mcu.split(" ")[3]
+                total = (int(sum1) + int(sum2))
+                await message.channel.send("The sum is " + str(int(sum1 + sum2)))
+
+                time.sleep(2)
+
+                await message.channel.send("Yeah, jk, the sum is " + str(total))
+
+            if mcu.startswith("I!SUB"):
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                print("Difference") 
+                diff1 = mcu.split(" ")[1]
+                diff2 = mcu.split(" ")[3]
+                difference = (int(diff1) - int(diff2))
+                await message.channel.send("The difference is " + str(difference))
+
+            if mcu.startswith("I!PROD"):
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                print("Product") 
+                prod1 = mcu.split(" ")[1]
+                prod2 = mcu.split(" ")[3]
+                product = (int(prod1) * int(prod2))
+                await message.channel.send("The product is " + str(product))
+
+            if mcu.startswith("I!DIV"):
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                await message.channel.send("um...")
+                time.sleep(2)
+                print("Quotient") 
+                quo1 = mcu.split(" ")[1]
+                quo2 = mcu.split(" ")[3]
+                quotient = (int(quo1) / int(quo2))
+                await message.channel.send("The quotient is " + str(quotient))
+
+                
 
 print("Hit!!")
 
