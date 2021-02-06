@@ -4,7 +4,7 @@ This is the official hack for the Impractical Hackers MLH Hackathon!
 
 ### Inspiration
 
-You know how when you think of discord bots, you think of fun, or helpful, or efficient? Well, we decided to do the opposite of that for impractical hackers! This bot is an extremely inefficient, and impractical hack!
+You know how when you think of discord bots, you think of fun, or helpful, or efficient? Well, we decided to do the opposite of that for impractical hackers! This bot is an extremely inefficient and impractical hack!
 
 ### What it does
 
