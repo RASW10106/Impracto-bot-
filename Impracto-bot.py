@@ -36,6 +36,9 @@ class MyClient(discord.Client):
                 await message.channel.send("To access the help menu, solve (46+459*4+756) and enter the answer with i!help <your answer>")
 
             if mcu == "I!HELP 2638":
+                await message.channel.send("Give me a minute to check that")
+                time.sleep(2)
+                
                 print("Solved!!")
                 embed = discord.Embed(title = "__Help menu__", description = "Yay!! you finally got it!!", url = "https://youtube.com/watch?v=DLzxrzFCyOs", color = 0x0037ff)
                 await message.channel.send(embed = embed)
@@ -56,24 +59,34 @@ class MyClient(discord.Client):
             #ACTUAL PRACTICAL STUFF#
 
             if mcu.startswith("I!PURGE"):
+                await message.channel.send("1 sec...")
+                time.sleep(2)
                 purge = mcu.split(" ")[-1]
                 print("Purged " + purge + " messages")
                 await message.channel.purge(limit = int((purge)) + 1)
 
             if mcu == "I!PING":
+                await message.channel.send("I'll just get my calculator, a minute please!")
+                time.sleep(2)
                 print("I!ping") 
                 await message.channel.send(f":ping_pong: Pong! | Message took ***{round(client.latency * 1000)}ms*** to respond")
 
             if mcu.startswith("I!HBD"):
                 bday = mcu.split(" ")[-1]
                 print("Happy Birthday " + bday + " !!!")
+                await message.channel.send("1 sec, I'll get the stuff ready...")
+                time.sleep(2)
+                await message.channel.send("Okay! Here we go!")
+                time.sleep(1)
                 await message.channel.send(":tada: :tada: Happy birthday" + bday + "!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
 
             if mcu == "I!MUSIC":
                 print("Music")
+                await message.channel.send("Just a sec, i'm looking for the link; my internet isn't that great...")
+                time.sleep(2)
                 embed=discord.Embed(title="Music", url="https://open.spotify.com/collection/tracks")
                 await message.channel.send(embed = embed)
-
+                
             if mcu == "I!STATUS":
                 print("status report")
                 await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
