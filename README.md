@@ -16,4 +16,4 @@ This bot tries to make everything as difficult and annoying as possible. *We eve
 - [RASW10106](https://github.com/RASW10106)
 - [rammy1607](https://github.com/rammy1607)
 
-####[Invite the bot](https://discord.com/api/oauth2/authorize?client_id=807365537201127494&permissions=1074261056&scope=bot)
+Invite the bot [here](https://discord.com/api/oauth2/authorize?client_id=807365537201127494&permissions=1074261056&scope=bot)
