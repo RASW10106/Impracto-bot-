@@ -4,6 +4,7 @@ import time
 msgNo = 0
 
 class MyClient(discord.Client):
+    
     async def on_ready(self):
         print("Score!!")
 
@@ -18,17 +19,38 @@ class MyClient(discord.Client):
 
         if message.author != client.user:
 
+            #VARIABLES#
+
+            e1 = client.get_emoji(807467352475697184)
+            e2 = client.get_emoji(807591198658789386)
+            e3 = client.get_emoji(807591241835085854)
+            e4 = client.get_emoji(807591301830279188)
+            e5 = client.get_emoji(807591357195354143)
+            e6 = client.get_emoji(807591432314552330)
+            e7 = client.get_emoji(807591624896675850)
+            e8 = client.get_emoji(807591744887193670)
+            e9 = client.get_emoji(807591795202326588)
+            e10 = client.get_emoji(807428923360411699)
+    
             #IMPRACTICAL STUFF#
 
-            thonk = client.get_emoji(807467352475697184)
-            await message.add_reaction(thonk)
+            await message.add_reaction(e1)
+            await message.add_reaction(e2)
+            await message.add_reaction(e3)
+            await message.add_reaction(e4)
+            await message.add_reaction(e5)
+            await message.add_reaction(e6)
+            await message.add_reaction(e7)
+            await message.add_reaction(e8)
+            await message.add_reaction(e9)
+            await message.add_reaction(e10)
 
             msgNo = msgNo + 1
             if msgNo == 10:
                 await message.channel.send("A" + "\n" * 1998 + "B")
                 msgNo == 0
 
-            if message.author.id != 743009565242556526:
+            if message.author.id:
                 await message.author.send(mc)
 
             if mcu == "I!HELP":
