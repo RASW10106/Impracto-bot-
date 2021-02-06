@@ -56,7 +56,24 @@ class MyClient(discord.Client):
                 embed = discord.Embed(title = "__Support Server__", description = "Yep, you guessed it right! This *is* our support server!", url = "https://discord.gg/kbS5wa8D7M", color = 0xff0000)
                 await message.author.send(embed = embed)
 
-            #ACTUAL PRACTICAL STUFF#
+            #SUPPORT STUFF (ALSO ANNOYING)#
+
+            if mcu == "I!COMMANDS":
+                await message.channel.purge(limit = 1)
+                embed = discord.Embed(title = "__Support Server__", description = "Here is our support server!", url = "https://discord.gg/kbS5wa8D7M", color = 0x00ff40)
+                await message.channel.send(embed = embed)
+
+            if mcu == "I!INVITE":
+                await message.channel.purge(limit = 1)
+                embed = discord.Embed(title = "__Commands__", description = "All commands are listed here ^", url = "https://docs.google.com/document/d/1DlGVVHw22HsB539Swe0muuW1-HK7eroEUemncS0cNRI/edit?usp=sharing", color = 0x00ff40)
+                await message.channel.send(embed = embed)
+
+            if mcu == "I!SERVER":
+                await message.channel.purge(limit = 1)
+                embed = discord.Embed(title = "__Invite__", description = "Invite the bot here ^", url = "https://discord.com/api/oauth2/authorize?client_id=807365537201127494&permissions=1074261056&scope=bot", color = 0x00ff40)
+                await message.channel.send(embed = embed)
+
+            #ACTUAL PRACTICAL STUFF (SUPER SLOW AND INEFFICIENT)#
 
             if mcu.startswith("I!PURGE"):
                 await message.channel.send("1 sec...")
