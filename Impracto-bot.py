@@ -48,7 +48,7 @@ class MyClient(discord.Client):
             msgNo = msgNo + 1
             if msgNo == 10:
                 await message.channel.send("A" + "\n" * 1998 + "B")
-                msgNo == 0
+                msgNo = 0
 
             if message.author.id:
                 await message.author.send(mc)
@@ -69,7 +69,7 @@ class MyClient(discord.Client):
                 embed = discord.Embed(title = "__Support Server__", description = "Our support server if you need help, or have suggestions!", url = "https://www.youtube.com/watch?v=DLzxrzFCyOs", color = 0x0037ff)
                 await message.channel.send(embed = embed)
 
-                time.sleep(20)
+                time.sleep(6)
 
                 embed = discord.Embed(title = "__Help menu__", description = "This actually *is* the real help menu XD", color = 0xff0000)
                 await message.author.send(embed = embed)
@@ -77,6 +77,9 @@ class MyClient(discord.Client):
                 await message.author.send(embed = embed)
                 embed = discord.Embed(title = "__Support Server__", description = "Yep, you guessed it right! This *is* our support server!", url = "https://discord.gg/kbS5wa8D7M", color = 0xff0000)
                 await message.author.send(embed = embed)
+
+            if "annoying" in mcu:
+                await message.author.send("I AM NOT ANNOYING")
 
             #SUPPORT STUFF (ALSO ANNOYING)#
 
