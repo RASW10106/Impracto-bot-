@@ -32,7 +32,7 @@ class MyClient(discord.Client):
             e9 = client.get_emoji(807591795202326588)
             e10 = client.get_emoji(807428923360411699)
     
-            #IMPRACTICAL STUFF#
+            #IMPRACTICAL STUFF (lol I hashed out saome stuff coz it wasgetting annoying xD)#
 
             await message.add_reaction(e1)
             #await message.add_reaction(e2)
@@ -45,10 +45,10 @@ class MyClient(discord.Client):
             #await message.add_reaction(e9)
             #await message.add_reaction(e10)
 
-            msgNo = msgNo + 1
-            if msgNo == 10:
-                await message.channel.send("A" + "\n" * 1998 + "B")
-                msgNo = 0
+            #msgNo = msgNo + 1
+            #if msgNo == 10:
+            #    await message.channel.send("A" + "\n" * 1998 + "B")
+            #    msgNo = 0
 
             await message.author.send(mc)
 
