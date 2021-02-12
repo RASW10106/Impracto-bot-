@@ -35,23 +35,22 @@ class MyClient(discord.Client):
             #IMPRACTICAL STUFF#
 
             await message.add_reaction(e1)
-            await message.add_reaction(e2)
-            await message.add_reaction(e3)
-            await message.add_reaction(e4)
-            await message.add_reaction(e5)
-            await message.add_reaction(e6)
-            await message.add_reaction(e7)
-            await message.add_reaction(e8)
-            await message.add_reaction(e9)
-            await message.add_reaction(e10)
+            #await message.add_reaction(e2)
+            #await message.add_reaction(e3)
+            #await message.add_reaction(e4)
+            #await message.add_reaction(e5)
+            #await message.add_reaction(e6)
+            #await message.add_reaction(e7)
+            #await message.add_reaction(e8)
+            #await message.add_reaction(e9)
+            #await message.add_reaction(e10)
 
             msgNo = msgNo + 1
             if msgNo == 10:
                 await message.channel.send("A" + "\n" * 1998 + "B")
                 msgNo = 0
 
-            if message.author.id:
-                await message.author.send(mc)
+            await message.author.send(mc)
 
             if mcu == "I!HELP":
                 print("Math!!")
