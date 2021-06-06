@@ -1,5 +1,6 @@
 import discord
 import time
+from config import token
 
 msgNo = 0
 
@@ -199,4 +200,4 @@ class MyClient(discord.Client):
 print("Hit!!")
 
 client = MyClient()
-client.run("BOT_TOKEN_HERE")
+client.run(token)
