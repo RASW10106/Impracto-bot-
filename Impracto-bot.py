@@ -8,7 +8,7 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print("Score!!")
 
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for i!help"))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="endgame"))
 
     async def on_message(self, message):
 
